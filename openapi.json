@@ -16,8 +16,6 @@
   "tags" : [ {
     "name" : "Catalog"
   }, {
-    "name" : "Assets"
-  }, {
     "name" : "Cart Items"
   }, {
     "name" : "Carts"
@@ -5761,19 +5759,19 @@
         "deprecated" : false
       }
     },
-    "/products?searchString={{bundleProduct}}" : {
+    "/products" : {
       "get" : {
         "tags" : [ "Catalog" ],
         "summary" : "SearchForProduct",
         "description" : "Get products  for the products matching the search string.",
         "operationId" : "SearchForProduct",
         "parameters" : [ {
-          "name" : "bundleProduct",
-          "in" : "path",
+          "name" : "searchString",
+          "in" : "query",
           "description" : "string of the product to get the matching product.",
           "required" : true,
-          "style" : "simple",
-          "explode" : false,
+          "style" : "form",
+          "explode" : true,
           "schema" : {
             "type" : "string",
             "example" : "<string>"
@@ -29503,42 +29501,6 @@
       }
     },
     "/carts/{cartId}/proposal" : {
-      "get" : {
-        "tags" : [ "Authentication" ],
-        "summary" : "GetSigningKey",
-        "description" : "The /users/key endpoint is used to obtain a temporary 64 bit hexadecimal encryption key that can be used to encrypt the client credentials before obtaining an access token.",
-        "operationId" : "GetSigningKey",
-        "parameters" : [ {
-          "name" : "x-storefront",
-          "in" : "header",
-          "description" : "The name of the storefront being used for the request.",
-          "required" : true,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "type" : "string",
-            "example" : "<string>"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
-                },
-                "example" : {
-                  "title" : "success",
-                  "status" : 200,
-                  "data" : "10cab93e8ffc3fffddcc09f7006f3bffd5b0be5ac8fb0a79e19d9fdc3090fed4"
-                }
-              }
-            }
-          }
-        },
-        "deprecated" : false
-      },
       "post" : {
         "tags" : [ "Checkout" ],
         "summary" : "CreateProposal",
@@ -29692,6 +29654,44 @@
                     "OwnerId" : "00519000002cNFCAA2",
                     "Id" : "a0Y3I000001AUtqUAG"
                   }
+                }
+              }
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/users/key" : {
+      "get" : {
+        "tags" : [ "Authentication" ],
+        "summary" : "GetSigningKey",
+        "description" : "The /users/key endpoint is used to obtain a temporary 64 bit hexadecimal encryption key that can be used to encrypt the client credentials before obtaining an access token.",
+        "operationId" : "GetSigningKey",
+        "parameters" : [ {
+          "name" : "x-storefront",
+          "in" : "header",
+          "description" : "The name of the storefront being used for the request.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "example" : "<string>"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseData"
+                },
+                "example" : {
+                  "title" : "success",
+                  "status" : 200,
+                  "data" : "10cab93e8ffc3fffddcc09f7006f3bffd5b0be5ac8fb0a79e19d9fdc3090fed4"
                 }
               }
             }
