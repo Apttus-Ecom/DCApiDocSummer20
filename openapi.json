@@ -7,8 +7,7 @@
     "version" : "1.0"
   },
   "servers" : [ {
-    "url" : "http://examples.apimatic.io/apps/calculator",
-    "description" : "This environment connect to the LIVE calculator API"
+    "url" : "/"
   } ],
   "security" : [ {
     "httpBasic" : [ ]
@@ -64,7 +63,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/Product"
                 },
                 "example" : {
                   "title" : "success",
@@ -2731,7 +2730,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/ProductRules"
                 },
                 "example" : {
                   "title" : "success",
@@ -2929,7 +2928,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/ProductRules"
                 },
                 "example" : {
                   "title" : "success",
@@ -3114,7 +3113,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/Categories"
                 },
                 "example" : {
                   "title" : "success",
@@ -5794,7 +5793,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/Product"
                 },
                 "example" : {
                   "title" : "success",
@@ -5894,7 +5893,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/CartItems"
                 },
                 "example" : {
                   "title" : "success",
@@ -7386,7 +7385,7 @@
       "post" : {
         "tags" : [ "Cart Items" ],
         "summary" : "AddProducttoCart",
-        "description" : "The cart items post endpoint can be used to add new line items to an existing cart. This is the most common type of cart action.\nA successful post will return the rules and line items associated with the added product.\n\n> Multiple line items may be returned if the product added is associated with a bundle.\n\n> Pricing for the added product is calculated as an asynchronous process after the product is added and may not be immediatley \n> available on the line item. While pricing is being calculated, the 'IsPricePending' field on the cart will be 'true'. \n\n\n## Request ##\n\n|**Type**|**Optional**|**Description**|\n|--|--|--|\n| CartRequest or Array [CartRequest] | No | Request body can be a single record or an array of records if multiple products are to be added. |\n\n#### CartRequest ####\n|**Key**|**Type**|**Default**|**Description**|\n|--|--|--|--|\n| ProductId | String | - | The Id of the product you wish to add |\n| Quantity | Number | - | The quantity of the product you wish to add |\n| ProductAttributes | Apttus_Config2__ProductAttributeValue__c | - | A product attribute value instance for the product |\n\n## Response\n|**Key**|**Type**|**Default**|**Description**|\n|--|--|--|--|\n| LineItems | String | - |  |\n| Rules | Number | - |  |",
+        "description" : "The cart items post endpoint can be used to add new line items to an existing cart. This is the most common type of cart action.\nA successful post will return the rules and line items associated with the added product.\n\n> Multiple line items may be returned if the product added is associated with a bundle.\n\n> Pricing for the added product is calculated as an asynchronous process after the product is added and may not be immediatley \n> available on the line item. While pricing is being calculated, the 'IsPricePending' field on the cart will be 'true'. \n\n\n## Request ##\n\n|**Type**|**Optional**|**Description**|\n|--|--|--|\n| CartRequest or Array [CartRequest] | No | Request body can be a single record or an array of records if multiple products are to be added. |\n\n#### CartRequest ####\n|**Key**|**Type**|**Default**|**Description**|\n|--|--|--|--|\n| ProductId | String | - | The Id of the product you wish to add |\n| Quantity | Number | - | The quantity of the product you wish to add |\n| ProductAttributes | Apttus_Config2__ProductAttributeValue__c | - | A product attribute value instance for the product |\n\n",
         "operationId" : "AddProducttoCart",
         "parameters" : [ {
           "name" : "cartId",
@@ -7428,7 +7427,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/CartItems"
                 },
                 "example" : {
                   "title" : "success",
@@ -8258,7 +8257,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/CartItems"
                 },
                 "example" : {
                   "title" : "success",
@@ -10006,7 +10005,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/CartItems"
                 },
                 "example" : {
                   "title" : "success",
@@ -12430,7 +12429,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/CartItems"
                 },
                 "example" : {
                   "title" : "success",
@@ -13027,7 +13026,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/RemoveMultipleRecord"
                 },
                 "example" : {
                   "title" : "success",
@@ -13088,7 +13087,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/Carts"
                 },
                 "example" : {
                   "title" : "success",
@@ -20493,7 +20492,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/Carts"
                 },
                 "example" : {
                   "title" : "success",
@@ -20826,7 +20825,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/DeleteRecord"
                 },
                 "example" : {
                   "title" : "success",
@@ -20879,7 +20878,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/GetCartRules"
                 },
                 "example" : {
                   "title" : "success",
@@ -21002,7 +21001,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/CreateCart"
                 },
                 "example" : {
                   "title" : "success",
@@ -21083,7 +21082,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/PromotionCart"
                 },
                 "example" : {
                   "title" : "success",
@@ -21143,7 +21142,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/PromotionCart"
                 },
                 "example" : {
                   "title" : "success",
@@ -21203,7 +21202,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/Carts"
                 },
                 "example" : {
                   "title" : "success",
@@ -22155,7 +22154,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/Describe"
                 },
                 "example" : {
                   "title" : "success",
@@ -25955,7 +25954,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/Record"
                 },
                 "example" : {
                   "title" : "success",
@@ -26058,7 +26057,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/Record"
                 },
                 "example" : {
                   "title" : "success",
@@ -26393,7 +26392,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/Record"
                 },
                 "example" : {
                   "title" : "success",
@@ -26483,7 +26482,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/Record"
                 },
                 "example" : {
                   "title" : "success",
@@ -28258,7 +28257,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/Record"
                 },
                 "example" : {
                   "title" : "success",
@@ -28326,7 +28325,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/DeleteRecord"
                 },
                 "example" : {
                   "title" : "success",
@@ -28379,7 +28378,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/RemoveMultipleRecord"
                 },
                 "example" : {
                   "title" : "success",
@@ -28425,7 +28424,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/Storefront"
                 },
                 "example" : {
                   "title" : "success",
@@ -28713,7 +28712,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/Order"
                 },
                 "example" : {
                   "title" : "success",
@@ -29546,7 +29545,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/Proposal"
                 },
                 "example" : {
                   "title" : "success",
@@ -29686,7 +29685,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/Authentication"
                 },
                 "example" : {
                   "title" : "success",
@@ -29735,7 +29734,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/Authentication"
                 },
                 "example" : {
                   "title" : "success",
@@ -29784,7 +29783,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/AccessToken"
                 },
                 "example" : {
                   "title" : "success",
@@ -29836,7 +29835,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ResponseData"
+                  "$ref" : "#/components/schemas/ActiveUser"
                 },
                 "example" : {
                   "title" : "success",
@@ -29989,19 +29988,213 @@
   },
   "components" : {
     "schemas" : {
-      "ResponseData" : {
-        "title" : "ResponseData",
-        "required" : [ "data", "id", "name" ],
+      "Product" : {
+        "title" : "Product",
+        "required" : [ "ConfigurationType", "Description", "HasAttributes", "HasOptions", "Icon", "Id", "IsActive", "Name", "ProductId" ],
+        "type" : "object",
+        "properties" : {
+          "Id" : {
+            "type" : "string"
+          },
+          "Name" : {
+            "type" : "string"
+          },
+          "Icon" : {
+            "type" : "string"
+          },
+          "ProductId" : {
+            "type" : "string"
+          },
+          "HasOptions" : {
+            "type" : "boolean"
+          },
+          "HasAttributes" : {
+            "type" : "boolean"
+          },
+          "Description" : {
+            "type" : "string"
+          },
+          "ConfigurationType" : {
+            "type" : "string"
+          },
+          "IsActive" : {
+            "type" : "boolean"
+          },
+          "AttributeGroups" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Product_AttributeGroups"
+            }
+          },
+          "OptionGroups" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Product_OptionGroups"
+            }
+          }
+        },
+        "example" : {
+          "title" : "success",
+          "status" : 200,
+          "data" : { }
+        }
+      },
+      "ProductRules" : {
+        "title" : "ProductRules",
+        "required" : [ "Active", "ConstraintRuleActions", "ConstraintRuleConditions", "Id", "MatchInOptions", "MatchInPrimaryLines", "Name" ],
+        "type" : "object",
+        "properties" : {
+          "Id" : {
+            "type" : "string"
+          },
+          "Name" : {
+            "type" : "string"
+          },
+          "ConstraintRuleConditions" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ProductRules_ConstraintRuleConditions"
+            }
+          },
+          "ConstraintRuleActions" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ProductRules_ConstraintRuleActions"
+            }
+          },
+          "MatchInOptions" : {
+            "type" : "boolean"
+          },
+          "MatchInPrimaryLines" : {
+            "type" : "boolean"
+          },
+          "Active" : {
+            "type" : "boolean"
+          }
+        },
+        "example" : {
+          "title" : "success",
+          "status" : 200,
+          "data" : { }
+        }
+      },
+      "Categories" : {
+        "title" : "Categories",
+        "required" : [ "Id", "IsHidden", "Label", "MaxOptions", "MinOptions", "Name" ],
+        "type" : "object",
+        "properties" : {
+          "Id" : {
+            "type" : "string"
+          },
+          "Name" : {
+            "type" : "string"
+          },
+          "Label" : {
+            "type" : "string"
+          },
+          "MinOptions" : {
+            "type" : "integer"
+          },
+          "MaxOptions" : {
+            "type" : "integer"
+          },
+          "IsHidden" : {
+            "type" : "boolean"
+          }
+        },
+        "example" : {
+          "title" : "success",
+          "status" : 200,
+          "data" : { }
+        }
+      },
+      "CartItems" : {
+        "title" : "CartItems",
+        "required" : [ "LineItems", "Rules" ],
+        "type" : "object",
+        "properties" : {
+          "Rules" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CartItems_Rules"
+            }
+          },
+          "LineItems" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CartItems_LineItems"
+            }
+          }
+        },
+        "example" : {
+          "title" : "success",
+          "status" : 200,
+          "data" : { }
+        }
+      },
+      "RemoveMultipleRecord" : {
+        "title" : "RemoveMultipleRecord",
+        "required" : [ "errors", "id", "success" ],
         "type" : "object",
         "properties" : {
           "id" : {
-            "type" : "integer",
-            "format" : "int64"
-          },
-          "name" : {
             "type" : "string"
           },
-          "data" : {
+          "success" : {
+            "type" : "boolean"
+          },
+          "errors" : {
+            "type" : "string"
+          }
+        },
+        "example" : {
+          "title" : "success",
+          "status" : 200,
+          "data" : { }
+        }
+      },
+      "Carts" : {
+        "title" : "Carts",
+        "required" : [ "Account", "AppliedRuleActionInfo", "AppliedRuleInfo", "BillToAccount", "Id", "IsPricePending", "LineItems", "Name", "Pricelists", "ShipToAccount", "SummaryGroups" ],
+        "type" : "object",
+        "properties" : {
+          "Id" : {
+            "type" : "string"
+          },
+          "Name" : {
+            "type" : "string"
+          },
+          "IsPricePending" : {
+            "type" : "boolean"
+          },
+          "LineItems" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object"
+            }
+          },
+          "Account" : {
+            "type" : "string"
+          },
+          "ShipToAccount" : {
+            "type" : "string"
+          },
+          "BillToAccount" : {
+            "type" : "string"
+          },
+          "AppliedRuleActionInfo" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object"
+            }
+          },
+          "SummaryGroups" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object"
+            }
+          },
+          "AppliedRuleInfo" : {
             "type" : "array",
             "items" : {
               "type" : "object"
@@ -30009,9 +30202,646 @@
           }
         },
         "example" : {
-          "title\"" : "success",
+          "title" : "success",
           "status" : 200,
           "data" : { }
+        }
+      },
+      "CreateCart" : {
+        "title" : "CreateCart",
+        "required" : [ "Account", "Id", "IsPricePending", "Name", "Pricelist" ],
+        "type" : "object",
+        "properties" : {
+          "Id" : {
+            "type" : "string"
+          },
+          "Name" : {
+            "type" : "string"
+          },
+          "IsPricePending" : {
+            "type" : "string"
+          },
+          "Pricelist" : {
+            "type" : "string"
+          },
+          "Account" : {
+            "type" : "string"
+          }
+        },
+        "example" : {
+          "title" : "success",
+          "status" : 200,
+          "data" : { }
+        }
+      },
+      "PromotionCart" : {
+        "title" : "PromotionCart",
+        "required" : [ "data" ],
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "type" : "boolean"
+          }
+        },
+        "example" : {
+          "title" : "success",
+          "status" : 200,
+          "data" : { }
+        }
+      },
+      "DeleteRecord" : {
+        "title" : "DeleteRecord",
+        "required" : [ "errors", "id", "success" ],
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string"
+          },
+          "success" : {
+            "type" : "boolean"
+          },
+          "errors" : {
+            "type" : "string"
+          }
+        },
+        "example" : {
+          "title" : "success",
+          "status" : 200,
+          "data" : { }
+        }
+      },
+      "GetCartRules" : {
+        "title" : "GetCartRules",
+        "required" : [ "ActionProductIds", "AppliedRuleInfo", "ConstraintRuleAction", "Id", "Message", "MessageType", "Name", "Pending", "SuggestedProductIds", "TriggeringProductIds" ],
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string"
+          },
+          "Name" : {
+            "type" : "string"
+          },
+          "ConstraintRuleAction" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object"
+            }
+          },
+          "AppliedRuleInfo" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object"
+            }
+          },
+          "Message" : {
+            "type" : "string"
+          },
+          "TriggeringProductIds" : {
+            "type" : "string"
+          },
+          "ActionProductIds" : {
+            "type" : "string"
+          },
+          "SuggestedProductIds" : {
+            "type" : "string"
+          },
+          "Pending" : {
+            "type" : "boolean"
+          },
+          "MessageType" : {
+            "type" : "string"
+          },
+          "IsTargetOption" : {
+            "type" : "boolean"
+          },
+          "ConfigurationId" : {
+            "type" : "string"
+          }
+        },
+        "example" : {
+          "title" : "success",
+          "status" : 200,
+          "data" : { }
+        }
+      },
+      "Describe" : {
+        "title" : "Describe",
+        "required" : [ "fields" ],
+        "type" : "object",
+        "properties" : {
+          "fields" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Describe_fields"
+            }
+          }
+        },
+        "example" : {
+          "title" : "success",
+          "status" : 200,
+          "data" : { }
+        }
+      },
+      "Record" : {
+        "title" : "Record",
+        "type" : "object",
+        "properties" : {
+          "Id" : {
+            "type" : "string"
+          },
+          "Name" : {
+            "type" : "string"
+          },
+          "Data" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object"
+            }
+          }
+        },
+        "example" : {
+          "title" : "success",
+          "status" : 200,
+          "data" : { }
+        }
+      },
+      "Order" : {
+        "title" : "Order",
+        "required" : [ "BillToAccountId", "Id", "Name", "OrderLineItems", "PriceListId", "PrimaryContactId", "ShipToAccountId" ],
+        "type" : "object",
+        "properties" : {
+          "Id" : {
+            "type" : "string"
+          },
+          "Name" : {
+            "type" : "string"
+          },
+          "OrderLineItems" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Order_OrderLineItems"
+            }
+          },
+          "PrimaryContactId" : {
+            "type" : "string"
+          },
+          "PriceListId" : {
+            "type" : "string"
+          },
+          "ShipToAccountId" : {
+            "type" : "string"
+          },
+          "BillToAccountId" : {
+            "type" : "string"
+          }
+        },
+        "example" : {
+          "title" : "success",
+          "status" : 200,
+          "data" : { }
+        }
+      },
+      "Proposal" : {
+        "title" : "Proposal",
+        "required" : [ "Account", "Id", "Name", "OwnerId", "PriceListId", "Primary_Contact", "Proposal_Category", "Proposal_Name" ],
+        "type" : "object",
+        "properties" : {
+          "Id" : {
+            "type" : "string"
+          },
+          "Name" : {
+            "type" : "string"
+          },
+          "OwnerId" : {
+            "type" : "string"
+          },
+          "Account" : {
+            "type" : "string"
+          },
+          "Primary_Contact" : {
+            "type" : "string"
+          },
+          "Proposal_Name" : {
+            "type" : "string"
+          },
+          "PriceListId" : {
+            "type" : "string"
+          },
+          "Proposal_Category" : {
+            "type" : "string"
+          }
+        },
+        "example" : {
+          "title" : "success",
+          "status" : 200,
+          "data" : { }
+        }
+      },
+      "Storefront" : {
+        "title" : "Storefront",
+        "required" : [ "AssetActions", "ChannelType", "CurrencyIsoCode", "DefaultAccountforGuestUsers", "DefaultLocale", "DefaultPriceList", "EnableABO", "EnablePromotions", "EnableRequestQuote", "EnableTaxCalculations", "Id", "Name", "OwnerId", "StoreBanners" ],
+        "type" : "object",
+        "properties" : {
+          "DefaultPriceList" : {
+            "type" : "string"
+          },
+          "StoreBanners" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Storefront_StoreBanners"
+            }
+          },
+          "Id" : {
+            "type" : "string"
+          },
+          "OwnerId" : {
+            "type" : "string"
+          },
+          "Name" : {
+            "type" : "string"
+          },
+          "CurrencyIsoCode" : {
+            "type" : "string"
+          },
+          "AssetActions" : {
+            "type" : "string"
+          },
+          "DefaultLocale" : {
+            "type" : "string"
+          },
+          "EnableTaxCalculations" : {
+            "type" : "boolean"
+          },
+          "EnableRequestQuote" : {
+            "type" : "boolean"
+          },
+          "EnableABO" : {
+            "type" : "boolean"
+          },
+          "EnablePromotions" : {
+            "type" : "boolean"
+          },
+          "DefaultAccountforGuestUsers" : {
+            "$ref" : "#/components/schemas/CartItems_Product"
+          },
+          "ChannelType" : {
+            "type" : "string"
+          }
+        },
+        "example" : {
+          "title" : "success",
+          "status" : 200,
+          "data" : { }
+        }
+      },
+      "Authentication" : {
+        "title" : "Authentication",
+        "required" : [ "data" ],
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "type" : "string"
+          }
+        },
+        "example" : {
+          "title" : "success",
+          "status" : 200,
+          "data" : { }
+        }
+      },
+      "AccessToken" : {
+        "title" : "AccessToken",
+        "required" : [ "data" ],
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/AccessToken_data"
+          }
+        },
+        "example" : {
+          "title" : "success",
+          "status" : 200,
+          "data" : { }
+        }
+      },
+      "ActiveUser" : {
+        "title" : "ActiveUser",
+        "required" : [ "data" ],
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/ActiveUser_data"
+          }
+        },
+        "example" : {
+          "title" : "success",
+          "status" : 200,
+          "data" : { }
+        }
+      },
+      "Product_AttributeGroups" : {
+        "type" : "object",
+        "properties" : {
+          "AttributeGroupId" : {
+            "type" : "string"
+          },
+          "Id" : {
+            "type" : "string"
+          },
+          "Name" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Product_OptionGroups" : {
+        "type" : "object",
+        "properties" : {
+          "ComponentProductId" : {
+            "type" : "string"
+          },
+          "Required" : {
+            "type" : "boolean"
+          },
+          "ProductOptionGroupId" : {
+            "type" : "string"
+          },
+          "ParentProductId" : {
+            "type" : "string"
+          },
+          "Modifiable" : {
+            "type" : "boolean"
+          },
+          "MinQuantity" : {
+            "type" : "integer"
+          },
+          "MaxQuantity" : {
+            "type" : "integer"
+          },
+          "Default" : {
+            "type" : "boolean"
+          },
+          "DefaultQuantity" : {
+            "type" : "integer"
+          },
+          "AllowCloning" : {
+            "type" : "boolean"
+          },
+          "Name" : {
+            "type" : "string"
+          },
+          "Id" : {
+            "type" : "string"
+          }
+        }
+      },
+      "ProductRules_ConstraintRuleConditions" : {
+        "type" : "object",
+        "properties" : {
+          "ConstraintRuleId" : {
+            "type" : "string"
+          },
+          "ProductId" : {
+            "type" : "string"
+          },
+          "ProductScope" : {
+            "type" : "string"
+          }
+        }
+      },
+      "ProductRules_ConstraintRuleActions" : {
+        "type" : "object",
+        "properties" : {
+          "ConstraintRuleId" : {
+            "type" : "string"
+          },
+          "ProductId" : {
+            "type" : "string"
+          },
+          "ProductScope" : {
+            "type" : "string"
+          },
+          "ActionType" : {
+            "type" : "string"
+          },
+          "AutoInclude" : {
+            "type" : "boolean"
+          },
+          "Message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "CartItems_Rules" : {
+        "type" : "object",
+        "properties" : {
+          "ActionProductIds" : {
+            "type" : "string"
+          },
+          "TriggeringProductIds" : {
+            "type" : "string"
+          },
+          "SuggestedProductIds" : {
+            "type" : "string"
+          },
+          "IsTargetOption" : {
+            "type" : "boolean"
+          },
+          "pending" : {
+            "type" : "boolean"
+          },
+          "ConstraintRuleActionId" : {
+            "type" : "string"
+          },
+          "ConfigurationId" : {
+            "type" : "string"
+          },
+          "Message" : {
+            "type" : "string"
+          },
+          "Id" : {
+            "type" : "string"
+          },
+          "Name" : {
+            "type" : "string"
+          }
+        }
+      },
+      "CartItems_Product" : {
+        "type" : "object",
+        "properties" : {
+          "Id" : {
+            "type" : "string"
+          },
+          "Name" : {
+            "type" : "string"
+          }
+        }
+      },
+      "CartItems_AttributeValue" : {
+        "type" : "object",
+        "properties" : {
+          "Id" : {
+            "type" : "string"
+          }
+        }
+      },
+      "CartItems_LineItems" : {
+        "type" : "object",
+        "properties" : {
+          "Product" : {
+            "$ref" : "#/components/schemas/CartItems_Product"
+          },
+          "AttributeValue" : {
+            "$ref" : "#/components/schemas/CartItems_AttributeValue"
+          },
+          "LineSequence" : {
+            "type" : "integer"
+          },
+          "LineType" : {
+            "type" : "string"
+          },
+          "LineStatus" : {
+            "type" : "string"
+          },
+          "LineNumber" : {
+            "type" : "integer"
+          },
+          "ItemSequence" : {
+            "type" : "integer"
+          },
+          "Quantity" : {
+            "type" : "integer"
+          },
+          "ProductId" : {
+            "type" : "string"
+          },
+          "PrimaryLineNumber" : {
+            "type" : "integer"
+          },
+          "Name" : {
+            "type" : "string"
+          },
+          "IsPrimaryLine" : {
+            "type" : "boolean"
+          },
+          "Id" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Describe_fields" : {
+        "type" : "object",
+        "properties" : {
+          "label" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "picklistValues" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "defaultValue" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Order_OrderLineItems" : {
+        "type" : "object",
+        "properties" : {
+          "LineType" : {
+            "type" : "string"
+          },
+          "NetPrice" : {
+            "type" : "integer"
+          },
+          "ListPrice" : {
+            "type" : "integer"
+          },
+          "LineNumber" : {
+            "type" : "integer"
+          },
+          "PriceType" : {
+            "type" : "string"
+          },
+          "ChargeType" : {
+            "type" : "string"
+          },
+          "Id" : {
+            "type" : "string"
+          },
+          "Orderid" : {
+            "type" : "string"
+          },
+          "Name" : {
+            "type" : "string"
+          },
+          "Status" : {
+            "type" : "string"
+          },
+          "Term" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "Storefront_StoreBanners" : {
+        "type" : "object",
+        "properties" : {
+          "Title" : {
+            "type" : "string"
+          },
+          "Image" : {
+            "type" : "string"
+          },
+          "Name" : {
+            "type" : "string"
+          },
+          "StorefrontId" : {
+            "type" : "string"
+          },
+          "Id" : {
+            "type" : "string"
+          }
+        }
+      },
+      "AccessToken_data" : {
+        "type" : "object",
+        "properties" : {
+          "userId" : {
+            "type" : "string"
+          },
+          "acccessToken" : {
+            "type" : "string"
+          }
+        }
+      },
+      "ActiveUser_data" : {
+        "type" : "object",
+        "properties" : {
+          "FirstName" : {
+            "type" : "string"
+          },
+          "LastName" : {
+            "type" : "string"
+          },
+          "Username" : {
+            "type" : "string"
+          },
+          "Id" : {
+            "type" : "string"
+          },
+          "Email" : {
+            "type" : "string"
+          },
+          "Name" : {
+            "type" : "string"
+          },
+          "Alias" : {
+            "type" : "string"
+          }
         }
       }
     },
