@@ -6,9 +6,6 @@
     "contact" : { },
     "version" : "1.0"
   },
-  "servers" : [ {
-    "url" : "/"
-  } ],
   "security" : [ {
     "httpBasic" : [ ]
   } ],
