@@ -8,7 +8,7 @@
   },
   "security" : [ {
     "httpBasic" : [ ]
-  }],
+  } ],
   "tags" : [ {
     "name" : "Catalog"
   }, {
@@ -5840,6 +5840,17 @@
         "description" : "The options post endpoint can be used to add options to an existing cart item.\n\n## Request# ##\n|***Type***|**Optional**|**Description**|\n|--|--|--|\n|OptionRequest or Array [OptionRequest]| No | Request body can be a single record or an array of records if multiple options are to be added. |\n\n#### OptionRequest ####\n|**Key**|**Type**|**Optional**|**Description**|\n|--|--|--|--|\n| ProductId | String | No | The Product Id of the Option you want to add to the bundle |\n| Quantity | Number | No | The quantity of the option you want to add |\n| SellingTerm | Number | Yes | The value for the selling term of the option to be added |\n| ProductAttributes | ProductAttributeValue | Yes | Product attributes for the option to be added |\n| LineItem | CartLineItem | Yes | Line item for the option to be added |\n\n> The body of the request should contain an object containing the primitive string id of the option you want added to the bundle along with the quantity to be added.\n\n## Response ##\n|**Key**|**Type**|**Default**|**Description**|\n|--|--|--|--|\n| Rules | Array<AppliedRuleActionInfo> | - | An array of Applied Rule Action Info records associated with the line items |\n| LineItems | Array<CartItem> | - | An array containing all cart items associated with the line number of the bundle product (before reprice) |",
         "operationId" : "AddOptiontoBundle",
         "parameters" : [ {
+          "name" : "price",
+          "in" : "query",
+          "description" : "The pricing strategy to use. 'default' | 'async' | 'skip'",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "<string>"
+          }
+        }, {
           "name" : "cartId",
           "in" : "path",
           "description" : "The reference id of the cart. Can be set to 'active' to use the current active cart for the user.",
@@ -7385,6 +7396,17 @@
         "description" : "The cart items post endpoint can be used to add new line items to an existing cart. This is the most common type of cart action.\nA successful post will return the rules and line items associated with the added product.\n\n> Multiple line items may be returned if the product added is associated with a bundle.\n\n> Pricing for the added product is calculated as an asynchronous process after the product is added and may not be immediatley \n> available on the line item. While pricing is being calculated, the 'IsPricePending' field on the cart will be 'true'. \n\n\n## Request ##\n\n|**Type**|**Optional**|**Description**|\n|--|--|--|\n| CartRequest or Array [CartRequest] | No | Request body can be a single record or an array of records if multiple products are to be added. |\n\n#### CartRequest ####\n|**Key**|**Type**|**Default**|**Description**|\n|--|--|--|--|\n| ProductId | String | - | The Id of the product you wish to add |\n| Quantity | Number | - | The quantity of the product you wish to add |\n| ProductAttributes | Apttus_Config2__ProductAttributeValue__c | - | A product attribute value instance for the product |\n\n",
         "operationId" : "AddProducttoCart",
         "parameters" : [ {
+          "name" : "price",
+          "in" : "query",
+          "description" : "The pricing strategy to use. 'default' | 'async' | 'skip'",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "<string>"
+          }
+        }, {
           "name" : "cartId",
           "in" : "path",
           "description" : "The reference to the cart or 'active' for the current active cart",
@@ -12387,6 +12409,17 @@
         "description" : "You can easily remove items from the Cart. A successful Cart item removal request will return any remaining line items and rules associated with the bundle or an empty result for standalone products.\n\n> Multiple line items may be returned if the cart item removed is associated with a bundle.\n\n> Pricing for the added product is calculated as an asynchronous process after the product is added and may not be immediatley \n> available on the line item. While pricing is being calculated, the 'IsPricePending' field on the cart will be 'true'.",
         "operationId" : "RemoveCartItem",
         "parameters" : [ {
+          "name" : "price",
+          "in" : "query",
+          "description" : "The pricing strategy to use. 'default' | 'async' | 'skip'",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "<string>"
+          }
+        }, {
           "name" : "cartId",
           "in" : "path",
           "description" : "The reference to the cart or 'active' for the current active cart",
@@ -12984,6 +13017,17 @@
         "description" : "You can easily remove items from the Cart. The response will contain the delete status of each item deleted.\n\n## Request ##\nRequest body should be an array of objects containing a key with the name 'Id' and the string value for the id of the cart item to delete.\n\n#### Example ####\n  [\n    {\n      \"Id\" : \"a1C4R0000062IC0UAM\"\n    },\n    {\n      \"Id\" : \"a1C4R0000062IC1UAM\"\n    },\n    {\n      \"Id\" : \"a1C4R0000062IC2UAM\"\n    }\n  ]",
         "operationId" : "RemoveMultipleCartItems",
         "parameters" : [ {
+          "name" : "price",
+          "in" : "query",
+          "description" : "The pricing strategy to use. 'default' | 'async' | 'skip'",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "<string>"
+          }
+        }, {
           "name" : "cartId",
           "in" : "path",
           "description" : "The reference to the cart or 'active' for the current active cart",
@@ -20450,6 +20494,17 @@
         "description" : "Updates a cart on the server that matches the cartId path variable. The fields to be updated need to be passed in to the body of the request.\n\n## Request\n|**Type**|**Optional**|**Description**|\n|--|--|--|\n| Apttus_Config2__ProductConfiguration__c | No | Cart object with the updated data |\n\n> Request body must include the cart object with the updated fields to be applied to the specified cart on the server.",
         "operationId" : "UpdateCart",
         "parameters" : [ {
+          "name" : "price",
+          "in" : "query",
+          "description" : "The pricing strategy to use. 'default' | 'async' | 'skip'",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "<string>"
+          }
+        }, {
           "name" : "cartId",
           "in" : "path",
           "description" : "The reference to the cart or 'active' for the current active cart.",
