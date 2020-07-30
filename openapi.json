@@ -32,6 +32,17 @@
         "description" : "Get product information for the product matching the productId path variable.",
         "operationId" : "GetProduct",
         "parameters" : [ {
+          "name" : "alias",
+          "in" : "query",
+          "description" : "The namespace for the fields will be prefixed if set to false. By default it is true.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean",
+            "example" : false
+          }
+        }, {
           "name" : "productId",
           "in" : "path",
           "description" : "The reference id of the product to retrieve.",
@@ -3093,6 +3104,17 @@
         "description" : "Gets the category information for the storefront named in the `x-storefront` header. Category information is based on the CPQ configuration on the storefront record you are querying.",
         "operationId" : "GetCategories",
         "parameters" : [ {
+          "name" : "alias",
+          "in" : "query",
+          "description" : "The namespace for the fields will be prefixed if set to false. By default it is true.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean",
+            "example" : false
+          }
+        }, {
           "name" : "x-storefront",
           "in" : "header",
           "description" : "The name of the storefront being used for the request.",
@@ -5762,6 +5784,17 @@
         "description" : "Get products  for the products matching the search string.",
         "operationId" : "SearchForProduct",
         "parameters" : [ {
+          "name" : "alias",
+          "in" : "query",
+          "description" : "The namespace for the fields will be prefixed if set to false. By default it is true.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean",
+            "example" : false
+          }
+        }, {
           "name" : "searchString",
           "in" : "query",
           "description" : "string of the product to get the matching product.",
@@ -13100,6 +13133,17 @@
         "description" : "You can easily get a new or existing cart by providing the unique cart reference in the request or simply 'active' for the current active cart.\n\n> If 'active' is used and the user hasn't created a cart, a prepopulated cart will be returned with basic header information. This cart will not contain an Id and will be inserted the first time a product is added to the cart.",
         "operationId" : "GetActiveCart",
         "parameters" : [ {
+          "name" : "alias",
+          "in" : "query",
+          "description" : "The namespace for the fields will be prefixed if set to false. By default it is true.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean",
+            "example" : false
+          }
+        }, {
           "name" : "cartId",
           "in" : "path",
           "description" : "The reference to the cart or 'active' for the current active cart",
@@ -21215,6 +21259,17 @@
         "description" : "Causes a reprice of the cart on the server matching the cartId path variable.",
         "operationId" : "PriceCart",
         "parameters" : [ {
+          "name" : "alias",
+          "in" : "query",
+          "description" : "The namespace for the fields will be prefixed if set to false. By default it is true.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean",
+            "example" : false
+          }
+        }, {
           "name" : "cartId",
           "in" : "path",
           "description" : "The reference to the cart or 'active' for the current active cart.",
@@ -26081,6 +26136,16 @@
         "description" : "Records can be queried from the system by passing in the name of the object as a rest parameter and query conditions can be specified with various query parameters.",
         "operationId" : "GetRecord(s)",
         "parameters" : [ {
+          "name" : "alias",
+          "in" : "query",
+          "description" : "The namespace for the fields will be prefixed if set to false. By default it is true.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
           "name" : "object",
           "in" : "path",
           "description" : "Name of the object you want returned.",
@@ -26495,6 +26560,17 @@
         "description" : "Single record can be queried from the system by passing in the name of the object as a rest parameter and query conditions can be specified with various query parameters.",
         "operationId" : "FetchSingleRecord",
         "parameters" : [ {
+          "name" : "alias",
+          "in" : "query",
+          "description" : "The namespace for the fields will be prefixed if set to false. By default it is true.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean",
+            "example" : false
+          }
+        }, {
           "name" : "object",
           "in" : "path",
           "description" : "Name of the object you want returned.",
